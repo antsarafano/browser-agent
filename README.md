@@ -53,6 +53,12 @@ Installer les dépendances :
 pip install -r requirements.txt
 ```
 
+Installer playwright:
+
+```bash
+python -m playwright install
+```
+
 Créez un fichier `.env` et ajoutez :
 
 GOOGLE_API_KEY = "Votre clé d'API"
