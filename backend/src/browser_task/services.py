@@ -1,20 +1,17 @@
-from browser_use.controller.service import Controller
-from fastapi.exceptions import HTTPException
-from langchain_google_genai import ChatGoogleGenerativeAI
 from browser_use import Agent
-from dotenv import load_dotenv
+from fastapi.exceptions import HTTPException
 
 from browser_task.models import TaskPrompt, TaskResponse
+from config.llm import get_llm
 
-load_dotenv()
-
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
-
-controller = Controller(output_model=TaskResponse)
 
 async def execute_task(prompt: TaskPrompt) -> TaskResponse:
+    if prompt.api_key == "":
+        raise HTTPException(400, "The API Key is empty.")
+    llm = get_llm(model=prompt.model, api_key=prompt.api_key)
+
     agent = Agent(
-        task=prompt.prompt,
+        task=prompt.message,
         llm=llm,
     )
     history = await agent.run()
