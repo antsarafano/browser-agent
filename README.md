@@ -1,5 +1,7 @@
 # Jarvis
 
+Agent IA utilisant Browser Use pour exécuter des tâches dans le navigateur.
+
 ## Fontend
 
 ### Prérequis
