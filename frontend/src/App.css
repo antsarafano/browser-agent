@@ -1,0 +1,62 @@
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-ui {
+    width: 60vw;
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+}
+
+.header {
+    width: 100vw;
+    padding: 20px 30px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .app-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header .menu-button {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.header .menu-button:hover {
+    background-color: #d3d3d3;
+}
+
+.header .menu-button:active {
+    background-color: #cbcbcb;
+}
+
+.header .menu-button .menu-icon {
+    width: 30px;
+}
+
+.menu-dialog {
+    position: absolute;
+}
+
+.header-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.header-select {
+    margin-left: 50px;
+    width: 200px;
+}
